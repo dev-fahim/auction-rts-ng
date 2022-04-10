@@ -7,7 +7,7 @@ import {SocketIoModule, SocketIoConfig} from 'ngx-socket-io';
 import {FormsModule} from "@angular/forms";
 
 const config: SocketIoConfig = {
-  url: 'http://10.12.152.153:5050',
+  url: 'http://159.203.27.156:5050',
 };
 
 @NgModule({
