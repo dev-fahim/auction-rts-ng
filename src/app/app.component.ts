@@ -66,7 +66,7 @@ export class AppComponent {
       this.bid = {
         timestamp: new Date().getTime(),
         currentAmount: this.item?.currentAmount ?? 0,
-        bidAmount: (this.item?.currentAmount ?? 0) + this.extraBidAmount,
+        bidAmount: (this.item?.currentAmount ?? 0) + 10,
         isApproved: false,
         connectionId: this.connectionId ?? "",
         name: this.name

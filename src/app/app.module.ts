@@ -5,9 +5,10 @@ import {AppComponent} from './app.component';
 
 import {SocketIoModule, SocketIoConfig} from 'ngx-socket-io';
 import {FormsModule} from "@angular/forms";
+import {environment} from "../environments/environment";
 
 const config: SocketIoConfig = {
-  url: 'http://159.203.27.156:5050',
+  url: environment.production ? 'http://159.203.27.156:5050' : 'http://localhost:5050' ,
 };
 
 @NgModule({
