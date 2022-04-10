@@ -12,6 +12,8 @@ export class AppComponent {
   title = 'auction-rts-ng';
   name = "";
 
+  timeNow = 0;
+
   connectionId: string | null = null;
 
   isApproved = false;
@@ -28,6 +30,10 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.timeNow += 1;
+    }, 1000);
+
     this.connectionId = uuidV4();
     if (this.connectionId === null) {
       const uid = uuidV4();
@@ -56,7 +62,7 @@ export class AppComponent {
   }
 
   bidNow(): void {
-    if (this.extraBidAmount > 0) {
+    if (this.extraBidAmount > 0 && this.timeNow % 10 === 0) {
       this.bid = {
         timestamp: new Date().getTime(),
         currentAmount: this.item?.currentAmount ?? 0,
